@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Arcade Web · 小游戏站</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<main class="home">
+  <h1>🕹 Arcade Web</h1>
+  <p class="sub">纯原生 HTML / CSS / JS · 选一个游戏开始</p>
+  <div class="game-cards">
+    <a class="card" href="tetris.html" id="card-tetris">
+      <span class="glyph">🧱</span>
+      <h2>俄罗斯方块</h2>
+      <p>7-Bag 随机、SRS 旋转踢墙、软降 / 硬降、连消计分、等级加速。</p>
+      <span class="best">最高分：<strong id="best-tetris">0</strong></span>
+    </a>
+    <a class="card" href="snake.html" id="card-snake">
+      <span class="glyph">🐍</span>
+      <h2>贪吃蛇</h2>
+      <p>吃食物变长、速度随分数提升，撞墙或撞到自己即结束。</p>
+      <span class="best">最高分：<strong id="best-snake">0</strong></span>
+    </a>
+  </div>
+</main>
+<script>
+  document.getElementById('best-tetris').textContent =
+    localStorage.getItem('tetris.best.score') || '0';
+  document.getElementById('best-snake').textContent =
+    localStorage.getItem('snake.best.score') || '0';
+</script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>贪吃蛇 · Arcade Web</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<main class="shell">
+  <div class="topbar">
+    <h1>🐍 贪吃蛇</h1>
+    <div class="nav">
+      <button id="btn-pause">暂停</button>
+      <button id="btn-restart">重开</button>
+      <button id="btn-home">首页</button>
+    </div>
+  </div>
+  <div class="hud">
+    <div class="stat"><div class="label">分数</div><div class="value" id="hud-score">0</div></div>
+    <div class="stat"><div class="label">长度</div><div class="value" id="hud-len">3</div></div>
+    <div class="stat"><div class="label">速度</div><div class="value" id="hud-speed">1</div></div>
+    <div class="stat"><div class="label">最高分</div><div class="value" id="hud-best">0</div></div>
+  </div>
+  <div class="stage">
+    <canvas id="board" class="board" aria-label="snake board"></canvas>
+    <div class="overlay" id="overlay">
+      <div class="box">
+        <h2 id="ov-title">已暂停</h2>
+        <div class="row"><span>本局分数</span><span id="ov-score">0</span></div>
+        <div class="row"><span>蛇长</span><span id="ov-len">3</span></div>
+        <div class="row"><span>历史最佳</span><span id="ov-best">0</span></div>
+        <div class="newbest" id="ov-newbest"></div>
+        <div class="actions">
+          <button class="primary" id="ov-main">继续</button>
+          <button id="ov-restart">重新开始</button>
+          <button id="ov-home">返回首页</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="hint kbd">← → ↑ ↓ / WASD 转向 · 空格 / P 暂停 · R 重开</p>
+  <p class="hint">触屏：滑动转向，或使用下方按钮</p>
+  <div class="touchpad" id="touchpad">
+    <span></span><button data-act="up">↑</button><span></span>
+    <button data-act="left">←</button>
+    <button data-act="down">↓</button>
+    <button data-act="right">→</button>
+  </div>
+</main>
+<script src="js/snake.js"></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>俄罗斯方块 · Arcade Web</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<main class="shell">
+  <div class="topbar">
+    <h1>🧱 俄罗斯方块</h1>
+    <div class="nav">
+      <button id="btn-pause">暂停</button>
+      <button id="btn-restart">重开</button>
+      <button id="btn-home">首页</button>
+    </div>
+  </div>
+  <div class="hud">
+    <div class="stat"><div class="label">分数</div><div class="value" id="hud-score">0</div></div>
+    <div class="stat"><div class="label">消行</div><div class="value" id="hud-lines">0</div></div>
+    <div class="stat"><div class="label">等级</div><div class="value" id="hud-level">1</div></div>
+    <div class="stat"><div class="label">最高分</div><div class="value" id="hud-best">0</div></div>
+  </div>
+  <div class="stage">
+    <canvas id="board" class="board" aria-label="tetris board"></canvas>
+    <div class="side">
+      <div class="panel"><div class="label">下一个</div><canvas id="next" class="preview" width="80" height="80"></canvas></div>
+    </div>
+    <div class="overlay" id="overlay">
+      <div class="box">
+        <h2 id="ov-title">已暂停</h2>
+        <div class="row"><span>本局分数</span><span id="ov-score">0</span></div>
+        <div class="row"><span>消行 / 等级</span><span id="ov-lines">0 / 1</span></div>
+        <div class="row"><span>历史最佳</span><span id="ov-best">0</span></div>
+        <div class="newbest" id="ov-newbest"></div>
+        <div class="actions">
+          <button class="primary" id="ov-main">继续</button>
+          <button id="ov-restart">重新开始</button>
+          <button id="ov-home">返回首页</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="hint kbd">← → 移动 · ↓ 软降 · ↑/X 旋转 · Z 反转 · 空格 硬降 · P 暂停 · R 重开</p>
+  <p class="hint">触屏：左右滑移动 · 点按旋转 · 下滑软降 · 快速下甩硬降</p>
+  <div class="touchpad" id="touchpad">
+    <button data-act="left">←</button>
+    <button data-act="rotate">↻</button>
+    <button data-act="right">→</button>
+    <button data-act="down">↓</button>
+    <button data-act="pause">⏸</button>
+    <button data-act="drop">⤓</button>
+  </div>
+</main>
+<script src="js/tetris.js"></script>
+</body>
+</html>
