@@ -6,8 +6,9 @@
 <title>贪吃蛇 · Arcade Web</title>
 <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body data-site="snake">
 <main class="shell">
+  <div class="crumb"><a href="https://tianbin-dev.github.io/games-hub/">← 返回入口</a></div>
   <div class="topbar">
     <h1>🐍 贪吃蛇</h1>
     <div class="nav">
@@ -41,6 +42,7 @@
   </div>
   <p class="hint kbd">← → ↑ ↓ / WASD 转向 · 空格 / P 暂停 · R 重开</p>
   <p class="hint">触屏：滑动转向，或使用下方按钮</p>
+  <p class="hint sitevisit">本站今日访问 <span id="visit-count">—</span></p>
   <div class="touchpad" id="touchpad">
     <span></span><button data-act="up">↑</button><span></span>
     <button data-act="left">←</button>
@@ -49,5 +51,6 @@
   </div>
 </main>
 <script src="js/snake.js"></script>
+<script src="js/stats.js"></script>
 </body>
 </html>

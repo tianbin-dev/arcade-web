@@ -6,8 +6,9 @@
 <title>俄罗斯方块 · Arcade Web</title>
 <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body data-site="tetris">
 <main class="shell">
+  <div class="crumb"><a href="https://tianbin-dev.github.io/games-hub/">← 返回入口</a></div>
   <div class="topbar">
     <h1>🧱 俄罗斯方块</h1>
     <div class="nav">
@@ -44,6 +45,7 @@
   </div>
   <p class="hint kbd">← → 移动 · ↓ 软降 · ↑/X 旋转 · Z 反转 · 空格 硬降 · P 暂停 · R 重开</p>
   <p class="hint">触屏：左右滑移动 · 点按旋转 · 下滑软降 · 快速下甩硬降</p>
+  <p class="hint sitevisit">本站今日访问 <span id="visit-count">—</span></p>
   <div class="touchpad" id="touchpad">
     <button data-act="left">←</button>
     <button data-act="rotate">↻</button>
@@ -54,5 +56,6 @@
   </div>
 </main>
 <script src="js/tetris.js"></script>
+<script src="js/stats.js"></script>
 </body>
 </html>
